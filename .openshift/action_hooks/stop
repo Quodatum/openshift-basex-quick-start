@@ -4,7 +4,7 @@
 
 
 $OPENSHIFT_DATA_DIR/basex/bin/basexhttpstop \
-					-X -Dorg.basex.SERVERHOST=$OPENSHIFT_DIY_IP \
+                    -X -Dorg.basex.SERVERHOST=$OPENSHIFT_DIY_IP \
                     -X -Dorg.basex.SERVERPORT=$OPENSHIFT_DIY_PORT \
                     -p 15005 -e 15006 -s 15007  \
                     > ${OPENSHIFT_LOG_DIR}basex.log 2>&1 &

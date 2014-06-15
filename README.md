@@ -40,6 +40,13 @@ Now, your application is available at
 * The FunctX library http://www.xqueryfunctions.com/ is installed to the BaseX repository
 * A test RESTXQ function is provided to overwrite the BaseX sample. (edit `basex/webapp/restxq.xqm`)   
 
-# TODO 
+The default port settings are:
+* p 15005 database server
+* e 15006 event server
+* s 15007 stop
+
+
+
+# Todo
 * Improve security, currently uses admin account/password
 * Implement as a cartridge 
