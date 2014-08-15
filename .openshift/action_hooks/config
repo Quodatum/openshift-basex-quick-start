@@ -2,16 +2,17 @@
 # config values
 # copyright quodatum
 # author: andy bunce
+# license: apache 2
 #
 set -a 
 
 BASEX_VERSION="http://files.basex.org/releases/7.9/BaseX79.zip"
 
 #account
-U=admin
-P=admin
+U="admin"
+P="admin"
 
 # ports, allowed values 15000->?
-p= 15005 # database server
-e= 15006 # event server
-s= 15007 # stop
+p= "15005" # database server
+e= "15006" # event server
+s= "15007" # stop
