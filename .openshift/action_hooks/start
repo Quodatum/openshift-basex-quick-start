@@ -1,12 +1,11 @@
 #!/bin/bash
 # start BaseX http server, installing if required
+# copyright quodatum
 # author: andy bunce
 #
 
 # config
-BASEX_VERSION="http://files.basex.org/releases/7.8.2/BaseX782.zip"
-#BASEX_VERSION="http://files.basex.org/releases/latest/BaseX80-20140417.151907.zip"
-
+source config
 
 # install basex if not installed or different version
 cd $OPENSHIFT_DATA_DIR
@@ -32,5 +31,5 @@ cd $OPENSHIFT_DATA_DIR
 nohup $OPENSHIFT_DATA_DIR/basex/bin/basexhttp \
                     -X -Dorg.basex.SERVERHOST=$OPENSHIFT_DIY_IP \
                     -X -Dorg.basex.SERVERPORT=$OPENSHIFT_DIY_PORT \
-                    -p 15005 -e 15006 -s 15007 -U admin -P admin \
+                    -p $p -e $e -s $s -U $U -P $P \
                     > ${OPENSHIFT_LOG_DIR}basex.log 2>&1 &

@@ -46,6 +46,8 @@ The default port settings are:
 * s 15007 stop
 
 
+# Changelog
+https://github.com/Quodatum/openshift-basex-quick-start/releases
 
 # Todo
 * Improve security, currently uses admin account/password
