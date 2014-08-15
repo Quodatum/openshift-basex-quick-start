@@ -41,10 +41,11 @@ The version of BaseX to install is also set here, currently 7.9.
 * The FunctX library http://www.xqueryfunctions.com/ is installed to the BaseX repository
 * A test RESTXQ function is provided to overwrite the BaseX sample. (edit `basex/webapp/restxq.xqm`)   
 
-The default port settings are:
+The default port settings are `.openshift/actions_hooks/config`:
 * p 15005 database server
 * e 15006 event server
 * s 15007 stop
+
 # Licence
 * This software is licenced under the Apache 2 licence
 * Saxon-HE is licenced under Mozilla Public License version 2.0 http://www.saxonica.com/license/license.xml
