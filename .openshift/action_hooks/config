@@ -13,6 +13,6 @@ U="admin"
 P="admin"
 
 # ports, allowed values 15000 - 16000
-PORT_DATABASE= "15005" 
-PORT_EVENT= "15006" 
-PORT_STOP= "15007" 
+PORT_DATABASE="15005" 
+PORT_EVENT="15006" 
+PORT_STOP="15007" 

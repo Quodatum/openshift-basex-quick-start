@@ -44,6 +44,10 @@ The default port settings are:
 * p 15005 database server
 * e 15006 event server
 * s 15007 stop
+# Licence
+* This software is licenced under the Apache 2 licence
+* Saxon-HE is licenced under Mozilla Public License version 2.0 http://www.saxonica.com/license/license.xml
+* FunctX is licenced under GNU-LGPL license http://www.functx.com/
 
 
 # Changelog
