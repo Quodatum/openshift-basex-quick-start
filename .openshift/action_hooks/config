@@ -12,7 +12,7 @@ BASEX_VERSION="http://files.basex.org/releases/7.9/BaseX79.zip"
 U="admin"
 P="admin"
 
-# ports, allowed values 15000->?
-PORT_DATABASE= "15005" # database server
-PORT_EVENT= "15006" # event server
-PORT_STOP= "15007" # stop
+# ports, allowed values 15000 - 16000
+PORT_DATABASE= "15005" 
+PORT_EVENT= "15006" 
+PORT_STOP= "15007" 
