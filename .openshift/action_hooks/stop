@@ -1,10 +1,14 @@
 #!/bin/bash
 # Stop BaseX http server
-# andy bunce 2014
+# copyright quodatum
+# author: andy bunce
+# licence apache 2
 
+# config
+source ${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/config
 
 $OPENSHIFT_DATA_DIR/basex/bin/basexhttpstop \
                     -X -Dorg.basex.SERVERHOST=$OPENSHIFT_DIY_IP \
                     -X -Dorg.basex.SERVERPORT=$OPENSHIFT_DIY_PORT \
-                    -p 15005 -e 15006 -s 15007  \
+                    -p $PORT_DATABASE -e $PORT_EVENT -s $PORT_STOP \
                     > ${OPENSHIFT_LOG_DIR}basex.log 2>&1 &

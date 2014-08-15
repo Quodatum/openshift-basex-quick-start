@@ -13,6 +13,6 @@ U="admin"
 P="admin"
 
 # ports, allowed values 15000->?
-p= "15005" # database server
-e= "15006" # event server
-s= "15007" # stop
+PORT_DATABASE= "15005" # database server
+PORT_EVENT= "15006" # event server
+PORT_STOP= "15007" # stop

@@ -2,7 +2,7 @@
 # start BaseX http server, installing if required
 # copyright quodatum
 # author: andy bunce
-#
+# licence apache 2
 
 
 # config
@@ -32,5 +32,6 @@ cd $OPENSHIFT_DATA_DIR
 nohup $OPENSHIFT_DATA_DIR/basex/bin/basexhttp \
                     -X -Dorg.basex.SERVERHOST=$OPENSHIFT_DIY_IP \
                     -X -Dorg.basex.SERVERPORT=$OPENSHIFT_DIY_PORT \
-                    -p $p -e $e -s $s -U $U -P $P \
+                    -p $PORT_DATABASE -e $PORT_EVENT -s $PORT_STOP \
+                    -U $U -P $P \
                     > ${OPENSHIFT_LOG_DIR}basex.log 2>&1 &
