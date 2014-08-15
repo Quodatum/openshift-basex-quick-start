@@ -34,7 +34,7 @@ Now, your application is available at
 
 ## Configuration
 
-* The version of `BaseX` installed is set in the `.openshift/actions_hooks/start` script.
+* is set in the `.openshift/actions_hooks/config`. The version of BaseX to install is also set here
 * REST and Webdav are deactivated (Edit `basex/webapp/WEB-INF/web.xml` to change this)
 * Saxon is installed to provide XSLT2. (Saxon-HE 9.5.1.5 from sourceforge.net/projects/saxon)
 * The FunctX library http://www.xqueryfunctions.com/ is installed to the BaseX repository
