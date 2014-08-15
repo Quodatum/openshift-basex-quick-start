@@ -5,7 +5,7 @@
 #
 
 # config
-source config
+source ${OPENSHIFT_REPO_DIR}/.openshift/actionhooks/config
 
 # install basex if not installed or different version
 cd $OPENSHIFT_DATA_DIR
