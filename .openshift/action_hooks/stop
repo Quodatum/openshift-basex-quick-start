@@ -5,7 +5,7 @@
 # licence apache 2
 
 # config
-source ${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/config
+source ${OPENSHIFT_REPO_DIR}/config
 
 $OPENSHIFT_DATA_DIR/basex/bin/basexhttpstop \
                     -X -Dorg.basex.SERVERHOST=$OPENSHIFT_DIY_IP \

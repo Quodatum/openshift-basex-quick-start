@@ -34,14 +34,14 @@ Now, your application is available at
 
 ## Configuration
 
-* Configuration is set in the `.openshift/actions_hooks/config`. 
+* Configuration is set in the `config`. 
 The version of BaseX to install is also set here, currently 7.9. 
 * REST and Webdav are deactivated (Edit `basex/webapp/WEB-INF/web.xml` to change this)
 * Saxon is installed to provide XSLT2. (Saxon-HE 9.5.1.5 from sourceforge.net/projects/saxon)
 * The FunctX library http://www.xqueryfunctions.com/ is installed to the BaseX repository
 * A test RESTXQ function is provided to overwrite the BaseX sample. (edit `basex/webapp/restxq.xqm`)   
 
-The default port settings are `.openshift/actions_hooks/config`:
+The default port settings are set `config`:
 * p 15005 database server
 * e 15006 event server
 * s 15007 stop

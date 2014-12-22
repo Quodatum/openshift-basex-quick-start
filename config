@@ -6,7 +6,8 @@
 #
 set -a 
 
-BASEX_VERSION="http://files.basex.org/releases/7.9/BaseX79.zip"
+#BASEX_VERSION="http://files.basex.org/releases/7.9/BaseX79.zip"
+BASEX_VERSION=https://github.com/Quodatum/openshift-basex-quick-start/releases/download/v0.3-alpha/BaseX80-20141222.214943.zip
 
 #account
 U="admin"
