@@ -30,8 +30,6 @@ cp -rv ${OPENSHIFT_REPO_DIR}basex/ ${OPENSHIFT_DATA_DIR}
 # run
 cd $OPENSHIFT_DATA_DIR
 nohup $OPENSHIFT_DATA_DIR/basex/bin/basexhttp \
-                    -X -Dorg.basex.SERVERHOST=$OPENSHIFT_DIY_IP \
-                    -X -Dorg.basex.SERVERPORT=$OPENSHIFT_DIY_PORT \
                     -p $PORT_DATABASE -e $PORT_EVENT -s $PORT_STOP \
                     -U $U -P $P \
                     > ${OPENSHIFT_LOG_DIR}basex.log 2>&1 &
