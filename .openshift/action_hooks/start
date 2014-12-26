@@ -29,7 +29,7 @@ cp -rv ${OPENSHIFT_REPO_DIR}basex/ ${OPENSHIFT_DATA_DIR}
 
 # run
 cd $OPENSHIFT_DATA_DIR
-nohup basex/bin/basexhttp -n ${OPENSHIFT_DIY_IP} \
+nohup ${OPENSHIFT_DATA_DIR}/basex/bin/basexhttp -n ${OPENSHIFT_DIY_IP} \
                     -p ${PORT_DATABASE} -e ${PORT_EVENT} -s ${PORT_STOP} \
                     -U ${BASEX_USER} -P ${BASEX_PASSWORD} \
                      &
