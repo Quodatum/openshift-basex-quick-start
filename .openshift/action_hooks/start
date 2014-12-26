@@ -6,7 +6,7 @@
 
 
 # config
-source ${OPENSHIFT_REPO_DIR}/config
+source config
 
 # install basex if not installed or different version
 cd $OPENSHIFT_DATA_DIR

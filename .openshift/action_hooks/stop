@@ -5,10 +5,8 @@
 # licence apache 2
 
 # config
-source ${OPENSHIFT_REPO_DIR}/config
+source config
 
 $OPENSHIFT_DATA_DIR/basex/bin/basexhttpstop \
-                    -X -Dorg.basex.SERVERHOST=$OPENSHIFT_DIY_IP \
-                    -X -Dorg.basex.SERVERPORT=$OPENSHIFT_DIY_PORT \
-                    -p $PORT_DATABASE -e $PORT_EVENT -s $PORT_STOP \
+                    -p ${PORT_DATABASE} -e ${PORT_EVENT} -s ${PORT_STOP} \
                     > ${OPENSHIFT_LOG_DIR}basex.log 2>&1 &
