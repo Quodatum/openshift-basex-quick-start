@@ -32,4 +32,4 @@ cd $OPENSHIFT_DATA_DIR
 nohup basex/bin/basexhttp -n ${PORT_DATABASE} \
                     -p ${PORT_DATABASE} -e ${PORT_EVENT} -s ${PORT_STOP} \
                     -U ${BASEX_USER} -P ${BASEX_PASSWORD} \
-                    > ${OPENSHIFT_LOG_DIR}basex.log 2>&1 &
+                     &
