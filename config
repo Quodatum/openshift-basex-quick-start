@@ -6,14 +6,16 @@
 #
 set -a 
 
+# path to zip distribution for required basex version
 #BASEX_VERSION="http://files.basex.org/releases/7.9/BaseX79.zip"
 BASEX_VERSION=https://github.com/Quodatum/openshift-basex-quick-start/releases/download/v0.3-alpha/BaseX80-20141223.192016.zip
 
 #account
-U="admin"
-P="admin"
+BASEX_USER="admin"
+BASEX_PASSWORD="admin"
 
 # ports, allowed values 15000 - 16000
 PORT_DATABASE="15005" 
 PORT_EVENT="15006" 
-PORT_STOP="15007" 
+PORT_STOP="15007"
+ 
