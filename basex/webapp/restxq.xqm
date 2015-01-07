@@ -67,15 +67,15 @@ db:system()/generalinformation/version
 :)
 declare function memory()as map(*){
 map{
-    "memory.free":=prof:human(Runtime:freeMemory(Runtime:getRuntime())),
-    "memory.max":=prof:human(Runtime:maxMemory(Runtime:getRuntime())),
-    "memory.total":=prof:human(Runtime:totalMemory(Runtime:getRuntime()))
+    "memory.free":prof:human(Runtime:freeMemory(Runtime:getRuntime())),
+    "memory.max":prof:human(Runtime:maxMemory(Runtime:getRuntime())),
+    "memory.total":prof:human(Runtime:totalMemory(Runtime:getRuntime()))
     }
 };
 
 (:~ useful java properties :)
 declare function about() as map(*){
- let $c:= map:new($page:core!map:entry(.,sys:getProperty(.)))
+ let $c:= map:merge($page:core!map:entry(.,sys:getProperty(.)))
  return map:new(($c,memory()))
 };
  
