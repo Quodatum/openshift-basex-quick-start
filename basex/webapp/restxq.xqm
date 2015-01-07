@@ -76,7 +76,7 @@ map{
 (:~ useful java properties :)
 declare function about() as map(*){
  let $c:= map:merge($page:core!map:entry(.,sys:getProperty(.)))
- return map:new(($c,memory()))
+ return map:merge(($c,memory()))
 };
  
 declare function property-table($map){
