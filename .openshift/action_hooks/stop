@@ -7,6 +7,9 @@
 # config
 source ${OPENSHIFT_REPO_DIR}/config
 
-$OPENSHIFT_DATA_DIR/basex/bin/basexhttpstop \
+cd $OPENSHIFT_DATA_DIR
+${OPENSHIFT_DATA_DIR}/basex/bin/basexhttp -d \
+                    -n ${OPENSHIFT_DIY_IP} -h ${OPENSHIFT_DIY_PORT} \
                     -p ${PORT_DATABASE} -e ${PORT_EVENT} -s ${PORT_STOP} \
-                    > ${OPENSHIFT_LOG_DIR}basex.log 2>&1 &
+                    -U ${BASEX_USER} -P ${BASEX_PASSWORD} \
+                     stop 
