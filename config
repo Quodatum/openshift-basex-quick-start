@@ -8,7 +8,7 @@ set -a
 
 # path to zip distribution for required basex version
 #BASEX_VERSION="http://files.basex.org/releases/7.9/BaseX79.zip"
-BASEX_VERSION=https://github.com/Quodatum/openshift-basex-quick-start/releases/download/untagged-9ec80c3def1f3e742c16/BaseX80-20150207.134603.zip
+BASEX_VERSION=https://github.com/Quodatum/openshift-basex-quick-start/releases/download/v0.3-alpha/BaseX80-20150207.134603.zip
 
 #account
 BASEX_USER="admin"
