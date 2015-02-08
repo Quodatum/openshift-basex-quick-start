@@ -6,13 +6,7 @@
  :)
 module namespace page = 'https://github.com/Quodatum/openshift-basex-quick-start';
 declare default function namespace 'https://github.com/Quodatum/openshift-basex-quick-start';
-
-declare namespace sys="java.lang.System";
-declare namespace Runtime="java.lang.Runtime";
-declare variable $page:core:=(
-            "java.version","java.vendor","java.vm.version",
-            "os.name","os.version","os.arch");
-            
+import module namespace env = 'quodatum.basex.env';
 
 (:~
  : This function generates the welcome page.
@@ -40,44 +34,35 @@ declare
       <div class="navbar navbar-inverse" role="navigation">
         <div class="container-fluid">
           <div class="navbar-header">
-            
-            <a class="navbar-brand" href="http://basex.org/">BaseX</a>    
-            <p class="navbar-text">version: {basex-version()}</p>
-            
+            <a href="https://github.com/Quodatum/openshift-basex-quick-start" target="basex"
+        class="navbar-brand">OpenShift BaseX Quick start</a>
+            <ul class="nav navbar-nav ">
+             <li><a  href="http://basex.org/" target="basex">BaseX</a> 
+             </li>
+             </ul>   
+            <p class="navbar-text">version: {env:basex-version()}</p>
+             <p class="navbar-text">Uptime: {env:jvmUptime()}</p>
+             
           </div>
          </div>
         </div>
-        <p >Quick start for Openshift</p>
+        <p ></p>
+		<div class="row">
+	<div class="col-md-6">
+	{panel("Applications",<a href="dba">DBA</a>)}
+	</div>
+	<div class="col-md-6">
         {
-        let $props:=property-table(about())
+        let $props:=property-table(env:about())
  		return panel("Environment Java Properties",$props)
  		}</div>
+		</div>
+		</div>
     </body>
   </html>
 };
 
-(:~ @return BaseX version string :)
-declare function basex-version() as xs:string{
-db:system()/generalinformation/version
-};
 
-(: 
- : memory status
- :http://javarevisited.blogspot.co.uk/2012/01/find-max-free-total-memory-in-java.html
-:)
-declare function memory()as map(*){
-map{
-    "memory.free":prof:human(Runtime:freeMemory(Runtime:getRuntime())),
-    "memory.max":prof:human(Runtime:maxMemory(Runtime:getRuntime())),
-    "memory.total":prof:human(Runtime:totalMemory(Runtime:getRuntime()))
-    }
-};
-
-(:~ useful java properties :)
-declare function about() as map(*){
- let $c:= map:merge($page:core!map:entry(.,sys:getProperty(.)))
- return map:merge(($c,memory()))
-};
  
 declare function property-table($map){
 <table class="table table-striped table-condensed ">
