@@ -1,5 +1,5 @@
 #!/bin/bash
-# config values
+# config values to setup basex
 # copyright quodatum
 # author: andy bunce
 # license: apache 2
@@ -7,8 +7,7 @@
 set -a 
 
 # path to zip distribution for required basex version
-#BASEX_VERSION="http://files.basex.org/releases/7.9/BaseX79.zip"
-BASEX_VERSION=https://github.com/Quodatum/openshift-basex-quick-start/releases/download/v0.3-alpha/BaseX80-20150207.134603.zip
+BASEX_VERSION="http://files.basex.org/releases/8.0/BaseX80.zip"
 
 #account
 BASEX_USER="admin"
