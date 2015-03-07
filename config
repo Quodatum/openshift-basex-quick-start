@@ -7,7 +7,7 @@
 set -a 
 
 # path to zip distribution for required basex version
-BASEX_VERSION="http://files.basex.org/releases/8.0/BaseX80.zip"
+BASEX_VERSION="http://files.basex.org/releases/8.0.1/BaseX801.zip"
 
 #account
 BASEX_USER="admin"

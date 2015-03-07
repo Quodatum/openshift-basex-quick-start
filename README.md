@@ -35,7 +35,7 @@ Now, your application is available at
 ## Configuration
 
 * Configuration is set in the `config`. 
-The version of BaseX to install is also set here, currently 7.9. 
+The version of BaseX to install is also set here, currently 8.0.1 
 * REST and Webdav are deactivated (Edit `basex/webapp/WEB-INF/web.xml` to change this)
 * Saxon is installed to provide XSLT2. (Saxon-HE 9.5.1.5 from sourceforge.net/projects/saxon)
 * The FunctX library http://www.xqueryfunctions.com/ is installed to the BaseX repository
