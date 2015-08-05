@@ -7,7 +7,7 @@
 set -a 
 
 # path to zip distribution for required basex version
-BASEX_VERSION="http://files.basex.org/releases/8.0.1/BaseX801.zip"
+BASEX_VERSION="http://files.basex.org/releases/8.2.3/BaseX823.zip"
 
 #account
 BASEX_USER="admin"
@@ -17,4 +17,7 @@ BASEX_PASSWORD="admin"
 PORT_DATABASE="15005" 
 PORT_EVENT="15006" 
 PORT_STOP="15007"
+
+# graphiz install
+GRAPHVIZ=1
  

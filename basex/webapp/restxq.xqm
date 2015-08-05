@@ -49,7 +49,9 @@ declare
         <p ></p>
 		<div class="row">
 	<div class="col-md-6">
-	{panel("Applications",<a href="dba">DBA</a>)}
+	{let $app:=("dba","benchx")
+	 let $body:=$app!<a href="{.}">{.}</a>
+	panel("Applications",$body)}
 	</div>
 	<div class="col-md-6">
         {
