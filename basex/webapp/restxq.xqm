@@ -48,11 +48,11 @@ declare
         </div>
         <p ></p>
 		<div class="row">
-	<div class="col-md-6">
-	{let $app:=("dba","benchx")
+	<div class="col-md-6">{
+	 let $app:=("dba","benchx")
 	 let $body:=$app!<a href="{.}">{.}</a>
-	panel("Applications",$body)}
-	</div>
+	 return panel("Applications",$body)
+	}</div>
 	<div class="col-md-6">
         {
         let $props:=property-table(env:about())
