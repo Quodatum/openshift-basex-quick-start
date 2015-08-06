@@ -49,8 +49,7 @@ declare
         <p ></p>
 		<div class="row">
 	<div class="col-md-6">{
-	 let $app:=("dba","benchx")
-	 let $body:=$app!<a href="{.}">{.}</a>
+	 let $body:=app-list()!<a href="{.}">{.}</a>
 	 return panel("Applications",$body)
 	}</div>
 	<div class="col-md-6">
@@ -88,4 +87,15 @@ declare function panel($title,$body){
     {$body}
   </div>
 </div>
+};
+
+declare function app-list() as xs:string*
+{
+   let $root:= db:system()/globaloptions/webpath/fn:string()
+                             || file:dir-separator()
+   return for $b in  file:list($root)
+            let $full:= $root || file:dir-separator() || $b
+            let $name:=file:name($full)
+            where file:is-dir($full)and fn:not($name = ('static','WEB-INF'))
+            return $name
 };
