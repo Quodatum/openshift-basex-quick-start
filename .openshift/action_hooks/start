@@ -24,8 +24,12 @@ else
 fi
 
 # overlay app
-echo "Overlaying app"
-cp -rv ${OPENSHIFT_REPO_DIR}basex/ ${OPENSHIFT_DATA_DIR}
+if [ -f ${OPENSHIFT_DATA_DIR}/basex/.basex ]; then
+   echo "already overlay"
+ else 
+    echo "Overlaying app"
+    cp -rv ${OPENSHIFT_REPO_DIR}basex/ ${OPENSHIFT_DATA_DIR}
+fi
 
 # run
 cd $OPENSHIFT_DATA_DIR
