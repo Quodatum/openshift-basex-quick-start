@@ -31,6 +31,8 @@ finally, deploy to OpenShift
 Now, your application is available at
 
 	http://$name-$namespace.rhcloud.com
+	
+
 
 ## Configuration
 
@@ -45,6 +47,10 @@ The default port settings are set `config`:
 * p 15005 database server
 * e 15006 event server
 * s 15007 stop
+
+## Extras
+
+* To have graphviz available use  https://github.com/puzzle/openshift-graphviz-cartridge
 
 # Licence
 * This software is licenced under the Apache 2 licence
