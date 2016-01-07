@@ -25,9 +25,7 @@ fi
 
 # overlay app
 if [ -f ${OPENSHIFT_DATA_DIR}/basex/.basex ]; then
-   echo "Restarting, replacing webapp and repo from git"
-   cd ${OPENSHIFT_DATA_DIR}/basex
-   rm -r webapp  repo
+   echo "Restarting, note: overlay does not handle deleted files!!"
 fi
 
 echo "Overlaying app"
