@@ -36,6 +36,7 @@ Make your application changes
 
     git add -A
     git commit -m "My bits"
+    git push origin master
     	
 The hosted application will be stopped and restarted with the updates.
 
