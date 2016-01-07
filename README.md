@@ -9,7 +9,7 @@ Built as a lightweight Java server, BaseX also supports XSLT, Webdav and RestXQ.
   
 ## Installation
 
-Create OpenShift application
+Create OpenShift application where $name is the name for the new application
 
 	rhc app create -a $name -t diy-0.1
 
@@ -28,24 +28,28 @@ finally, deploy to OpenShift
 
 	git push origin master
 
-Now, your application is available at
+Now, the application is available at
 
 	http://$name-$namespace.rhcloud.com
-	
 
+Make your application changes
+
+    git add -A
+    git commit -m "My bits"
+    	
+The hosted application will be stopped and restarted with the updates.
 
 ## Configuration
 
 * Configuration is set in the `config`. 
-The version of BaseX to install is also set here, currently 8.2.3 
+The version of BaseX to install is also set here, currently 8.3.1 
 * REST and Webdav are deactivated (Edit `basex/webapp/WEB-INF/web.xml` to change this)
-* Saxon is installed to provide XSLT2. (Saxon-HE 9.6.0.5 from sourceforge.net/projects/saxon)
+* Saxon is installed to provide XSLT2. (Saxon-HE 9.7.0.1 from sourceforge.net/projects/saxon)
 * The FunctX library http://www.xqueryfunctions.com/ is installed to the BaseX repository
 * A test RESTXQ function is provided to overwrite the BaseX sample. (edit `basex/webapp/restxq.xqm`)   
 
 The default port settings are set `config`:
 * p 15005 database server
-* e 15006 event server
 * s 15007 stop
 
 ## Extras

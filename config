@@ -1,13 +1,13 @@
 #!/bin/bash
 # config values to setup basex
-# copyright quodatum
+# copyright Quodatum Ltd
 # author: andy bunce
 # license: apache 2
 #
 set -a 
 
 # path to zip distribution for required basex version
-BASEX_VERSION="http://files.basex.org/releases/8.3/BaseX83.zip"
+BASEX_VERSION="http://files.basex.org/releases/8.3.1/BaseX831.zip"
 
 #account
 BASEX_USER="admin"
@@ -18,6 +18,6 @@ PORT_DATABASE="15005"
 # PORT_EVENT="15006" obsolete
 PORT_STOP="15007"
 
-# graphiz install
+# graphiz install (unused)
 GRAPHVIZ=1
  

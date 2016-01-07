@@ -25,11 +25,14 @@ fi
 
 # overlay app
 if [ -f ${OPENSHIFT_DATA_DIR}/basex/.basex ]; then
-   echo "already overlay"
- else 
-    echo "Overlaying app"
-    cp -rv ${OPENSHIFT_REPO_DIR}basex/ ${OPENSHIFT_DATA_DIR}
+   echo "Restarting, keeping data, deleting webapp,lib and repo"
+   cd ${OPENSHIFT_DATA_DIR}/basex
+   rm -r webapp lib repo
 fi
+
+echo "Overlaying app"
+cp -rv ${OPENSHIFT_REPO_DIR}basex/ ${OPENSHIFT_DATA_DIR}
+
 
 # run
 cd $OPENSHIFT_DATA_DIR

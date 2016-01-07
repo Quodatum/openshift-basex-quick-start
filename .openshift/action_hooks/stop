@@ -4,6 +4,11 @@
 # author: andy bunce
 # licence apache 2
 
+# hack around basexhttp stop issue
+pkill java
+exit
+
+# see https://mailman.uni-konstanz.de/pipermail/basex-talk/2016-January/010004.html
 # config
 source ${OPENSHIFT_REPO_DIR}/config
 
