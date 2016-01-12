@@ -7,7 +7,7 @@
 set -a 
 
 # path to zip distribution for required basex version
-BASEX_VERSION="http://files.basex.org/releases/latest/*.zip"
+BASEX_VERSION="http://files.basex.org/releases/latest/BaseX84-20160107.190325.zip"
 
 #account
 BASEX_USER="admin"
@@ -18,7 +18,7 @@ PORT_DATABASE="15005"
 # PORT_EVENT="15006" obsolete
 PORT_STOP="15007"
 
- # Java 8 see http://www.sothawo.com/2015/10/spring-boot-openshift2-diy-and-java8-without-installing-a-custom-jdk/
+# Java 8 see http://www.sothawo.com/2015/10/spring-boot-openshift2-diy-and-java8-without-installing-a-custom-jdk/
 JAVA_HOME="/etc/alternatives/java_sdk_1.8.0"
 PATH=$JAVA_HOME/bin:$PATH
 

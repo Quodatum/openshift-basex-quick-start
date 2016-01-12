@@ -48,8 +48,8 @@ declare
         </div>
         <p ></p>
 		<div class="row">
-	<div class="col-md-6">{
-	 let $body:=app-list()!<a href="{.}">{.}</a>
+	<div class="col-md-6 ">{
+	 let $body:=app-list()!app-link(.)
 	 return panel("Applications",$body)
 	}</div>
 	<div class="col-md-6">
@@ -63,7 +63,11 @@ declare
   </html>
 };
 
-
+declare function app-link($name){
+<div class="media">
+<a href="{$name}">{$name}</a>
+</div>
+};
  
 declare function property-table($map){
 <table class="table table-striped table-condensed ">
