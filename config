@@ -2,12 +2,12 @@
 # config values to setup basex
 # copyright Quodatum Ltd
 # author: andy bunce
-# license: apache 2
+# license: Apache 2
 #
 set -a 
 
 # path to zip distribution for required basex version
-BASEX_VERSION="http://files.basex.org/releases/8.3.1/BaseX831.zip"
+BASEX_VERSION="http://files.basex.org/releases/latest/*.zip"
 
 #account
 BASEX_USER="admin"
@@ -17,6 +17,10 @@ BASEX_PASSWORD="admin"
 PORT_DATABASE="15005" 
 # PORT_EVENT="15006" obsolete
 PORT_STOP="15007"
+
+ # Java 8 see http://www.sothawo.com/2015/10/spring-boot-openshift2-diy-and-java8-without-installing-a-custom-jdk/
+JAVA_HOME="/etc/alternatives/java_sdk_1.8.0"
+PATH=$JAVA_HOME/bin:$PATH
 
 # graphiz install (unused)
 GRAPHVIZ=1
