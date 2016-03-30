@@ -9,10 +9,6 @@ set -a
 # path to zip distribution for required basex version
 BASEX_VERSION="http://files.basex.org/releases/8.4.1/BaseX841.zip"
 
-#account
-BASEX_USER="admin"
-BASEX_PASSWORD="admin"
-
 # ports, allowed values 15000 - 16000
 PORT_DATABASE="15005" 
 # PORT_EVENT="15006" obsolete

@@ -42,7 +42,7 @@ declare
              </ul>   
             <p class="navbar-text">version: {env:basex-version()}</p>
              <p class="navbar-text">Uptime: {env:jvmUptime()}</p>
-             
+              <p class="navbar-text">User: {user:current()}</p>
           </div>
          </div>
         </div>
