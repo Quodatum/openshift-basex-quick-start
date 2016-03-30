@@ -71,7 +71,7 @@ The password is the same as the user name.
 I have borrowed these names from Michael Sperberg-McQueen, who asked the all the right questions, 
 “Running the BaseX XQuery engine in the OpenShift cloud platform ”http://cmsmcq.com/mib/?p=1395
 
-** Edit the users.xml file according to your own requirements before git push. **
+**Edit the users.xml file according to your own requirements before git push.**
 
 No default user is set for REST and WebDAV (in `web.xml`) so authentication is required for all requests.
 RESTXQ always uses the user "admin". 
