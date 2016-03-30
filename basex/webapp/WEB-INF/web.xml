@@ -8,20 +8,9 @@
   <display-name>BaseX: The XML Database and XQuery Processor</display-name>
   <description>HTTP Services</description>
 
-  <!-- BaseX options (HTTPLOCAL, TIMEOUT, LOG, etc.) can be overwritten
-       by prefixing the key with "org.basex." and specifying them in
-       <context-param/> elements, as shown below. Please checkout
-       http://docs.basex.org/wiki/Options for a list of all options. -->
-
-  <!-- Set default credentials -->
-  <context-param>
-    <param-name>org.basex.user</param-name>
-    <param-value>admin</param-value>
-  </context-param>
-  <context-param>
-    <param-name>org.basex.password</param-name>
-    <param-value>admin</param-value>
-  </context-param>
+  <!-- All BaseX options can be overwritten  prefixing the key with "org.basex."
+       and specifying them in <context-param/> elements, as shown below. Please
+       check out http://docs.basex.org/wiki/Options for a list of all options. -->
 
   <!--
   <context-param>
@@ -38,6 +27,19 @@
   </context-param>
 
   <context-param>
+    <param-name>org.basex.user</param-name>
+    <param-value>admin</param-value>
+  </context-param>
+  <context-param>
+    <param-name>org.basex.password</param-name>
+    <param-value>admin</param-value>
+  </context-param>
+  <context-param>
+    <param-name>org.basex.authmethod</param-name>
+    <param-value>Digest</param-value>
+  </context-param>
+
+  <context-param>
     <param-name>org.basex.httplocal</param-name>
     <param-value>true</param-value>
   </context-param>
@@ -51,9 +53,10 @@
   </context-param>
   -->
 
-  <!-- Global session listener -->
+  <!-- Global session and servlet listener -->
   <listener>
     <listener-class>org.basex.http.SessionListener</listener-class>
+    <listener-class>org.basex.http.ServletListener</listener-class>
   </listener>
 
   <!-- RESTXQ Service (can be deactivated by removing this entry) -->
@@ -61,6 +64,16 @@
     <servlet-name>RESTXQ</servlet-name>
     <servlet-class>org.basex.http.restxq.RestXqServlet</servlet-class>
     <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RESTXQ</servlet-name>
+    <url-pattern>/*</url-pattern>
+  </servlet-mapping>
+
+  <!-- REST Service (can be deactivated by removing this entry) -->
+  <servlet>
+    <servlet-name>REST</servlet-name>
+    <servlet-class>org.basex.http.rest.RESTServlet</servlet-class>
     <!-- service-specific credentials
     <init-param>
       <param-name>org.basex.user</param-name>
@@ -73,33 +86,15 @@
     -->
   </servlet>
   <servlet-mapping>
-    <servlet-name>RESTXQ</servlet-name>
-    <url-pattern>/*</url-pattern>
-  </servlet-mapping>
-
-  <!-- REST Service deactivated 
-  <servlet>
-    <servlet-name>REST</servlet-name>
-    <servlet-class>org.basex.http.rest.RESTServlet</servlet-class>
-    <init-param>
-      <param-name>org.basex.user</param-name>
-      <param-value/>
-    </init-param>
-    <init-param>
-      <param-name>org.basex.password</param-name>
-      <param-value/>
-    </init-param>
-   
-  </servlet>
-  <servlet-mapping>
     <servlet-name>REST</servlet-name>
     <url-pattern>/rest/*</url-pattern>
   </servlet-mapping>
-   -->
-  <!-- WebDAV Service deactivated 
+
+  <!-- WebDAV Service (can be deactivated by removing this entry) -->
   <servlet>
     <servlet-name>WebDAV</servlet-name>
     <servlet-class>org.basex.http.webdav.WebDAVServlet</servlet-class>
+    <!-- service-specific credentials
     <init-param>
       <param-name>org.basex.user</param-name>
       <param-value/>
@@ -108,18 +103,19 @@
       <param-name>org.basex.password</param-name>
       <param-value/>
     </init-param>
+    -->
   </servlet>
   <servlet-mapping>
     <servlet-name>WebDAV</servlet-name>
     <url-pattern>/webdav/*</url-pattern>
   </servlet-mapping>
- -->
+
   <!-- Mapping for static resources (may be restricted to a sub path) -->
   <servlet>
     <servlet-name>default</servlet-name>
     <init-param>
       <param-name>useFileMappedBuffer</param-name>
-      <param-value>false</param-value>
+      <param-value>true</param-value>
     </init-param>
   </servlet>
   <servlet-mapping>
