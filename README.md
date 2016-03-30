@@ -71,15 +71,17 @@ The password is the same as the user name.
 I have borrowed these names from Michael Sperberg-McQueen, who asked the all the right questions, 
 “Running the BaseX XQuery engine in the OpenShift cloud platform ”http://cmsmcq.com/mib/?p=1395
 
-You will want to replace this file with one of your own.
+** Edit the users.xml file according to your own requirements before git push. **
 
 No default user is set for REST and WebDAV (in `web.xml`) so authentication is required for all requests.
 RESTXQ always uses the user "admin". 
 
 ## Initial data
+To create any databases for the first run add copies of databases folders or 
+backup zips to the `first-data` folder. 
+
 When the server is started if no `users.xml` file is found then contents of `first-data` are copied
-to the `basex/data` folder. To create any databases at the first run add copies of databases folders or 
-backup zips to this folder. They will be installed along with `users.xml`.
+to the `basex/data` along with `users.xml`.
  
 ## Extras
 
