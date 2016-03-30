@@ -56,7 +56,7 @@ The default port settings are set `config`:
 ## Users and permissions
 When the server is started if no `users.xml` file is present it is copied from 
 the `users.xml` file (in `first-data`).
-This normally happens just the once, on the first run.  
+This normally happens only on the first run.  
 The `users.xml` contains the required "admin" user and some sample users. The password for admin is
 set as "changeme". 
 The sample users (case-sensitive) are: 
@@ -78,8 +78,8 @@ RESTXQ always uses the user "admin".
 
 ## Initial data
 When the server is started if no `users.xml` file is found then contents of `first-data` are copied
-to the `basex/data` folder. This will create or replace any databases with data from `first-data`.
-
+to the `basex/data` folder. To create any databases at the first run add copies of databases folders or 
+backup zips to this folder. They will be installed along with `users.xml`.
  
 ## Extras
 
