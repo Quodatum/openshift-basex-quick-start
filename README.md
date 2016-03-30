@@ -43,8 +43,8 @@ The hosted application will be stopped and restarted with the updates.
 ## Configuration
 
 * Configuration is set in the `config`. 
-The version of BaseX to install is also set here, currently 8.3.1 
-* REST and Webdav are deactivated (Edit `basex/webapp/WEB-INF/web.xml` to change this)
+The version of BaseX to install is also set here, currently 8.4.1 
+* REST and Webdav and RESTXQ are activated (Edit `basex/webapp/WEB-INF/web.xml` to change this)
 * Saxon is installed to provide XSLT2. (Saxon-HE 9.7.0.1 from sourceforge.net/projects/saxon)
 * The FunctX library http://www.xqueryfunctions.com/ is installed to the BaseX repository
 * A test RESTXQ function is provided to overwrite the BaseX sample. (edit `basex/webapp/restxq.xqm`)   
@@ -53,6 +53,36 @@ The default port settings are set `config`:
 * p 15005 database server
 * s 15007 stop
 
+## Users and permissions
+When the server is started if no `users.xml` file is present it is copied from 
+the `users.xml` file (in `first-data`).
+This normally happens only on the first run.  
+The `users.xml` contains the required "admin" user and some sample users. The password for admin is
+set as "changeme". 
+The sample users (case-sensitive) are: 
+
+* Angie (admin privileges)
+* Chris (create privileges)
+* Will (write privileges)
+* Ralph (read privileges)
+* Nadine (no privileges)
+
+The password is the same as the user name.
+I have borrowed these names from Michael Sperberg-McQueen, who asked the all the right questions, 
+“Running the BaseX XQuery engine in the OpenShift cloud platform ”http://cmsmcq.com/mib/?p=1395
+
+**Edit the users.xml file according to your own requirements before git push.**
+
+No default user is set for REST and WebDAV (in `web.xml`) so authentication is required for all requests.
+RESTXQ always uses the user "admin". 
+
+## Initial data
+To create any databases for the first run add copies of databases folders or 
+backup zips to the `first-data` folder. 
+
+When the server is started if no `users.xml` file is found then contents of `first-data` are copied
+to the `basex/data` along with `users.xml`.
+ 
 ## Extras
 
 * To have graphviz available use  https://github.com/puzzle/openshift-graphviz-cartridge

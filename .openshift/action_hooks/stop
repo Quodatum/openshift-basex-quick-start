@@ -13,8 +13,7 @@ exit
 source ${OPENSHIFT_REPO_DIR}/config
 
 cd $OPENSHIFT_DATA_DIR
-${OPENSHIFT_DATA_DIR}/basex/bin/basexhttp -d \
+${OPENSHIFT_DATA_DIR}/basex/bin/basexhttp \
                     -n ${OPENSHIFT_DIY_IP} -h ${OPENSHIFT_DIY_PORT} \
                     -p ${PORT_DATABASE} -s ${PORT_STOP} \
-                    -U ${BASEX_USER} -P ${BASEX_PASSWORD} \
                      stop 

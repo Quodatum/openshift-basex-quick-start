@@ -1,0 +1,56 @@
+<users>
+  <user name="admin" permission="admin">
+    <password algorithm="digest">
+      <hash>bb03b80c190f76ca271c79974d3021a8</hash>
+    </password>
+    <password algorithm="salted-sha256">
+      <salt>816083034356046</salt>
+      <hash>45093b3e6d5f26791494dfd98d69e46b6c6c325ea5c78fd5f0fa8a97290de78a</hash>
+    </password>
+  </user>
+  <user name="Angie" permission="admin">
+    <password algorithm="digest">
+      <hash>52a68370c19fb0884a888c38fd44742d</hash>
+    </password>
+    <password algorithm="salted-sha256">
+      <salt>792225066314595</salt>
+      <hash>ca37e6eaa96534842cad3a479b13bfa003c4e07a5ea1bc4a49a103b0bd99c87e</hash>
+    </password>
+  </user>
+  <user name="Chris" permission="create">
+    <password algorithm="digest">
+      <hash>136224a9c54040b9ce6ab5ae818e528c</hash>
+    </password>
+    <password algorithm="salted-sha256">
+      <salt>792310792494193</salt>
+      <hash>84da3715e0d6bc739f0c3f686efcd7ccce0867bd07c3dafbb104eb3652177bbc</hash>
+    </password>
+  </user>
+  <user name="Will" permission="write">
+    <password algorithm="digest">
+      <hash>1349b00454a551995c86ad52e914f74f</hash>
+    </password>
+    <password algorithm="salted-sha256">
+      <salt>792340374385538</salt>
+      <hash>02282eccc0a5d858287482f7c101ef624f55c43ee018f453a99dfde1d0d6968a</hash>
+    </password>
+  </user>
+  <user name="Ralph" permission="read">
+    <password algorithm="digest">
+      <hash>fd5ba25f78772dcaefb46b8837b82989</hash>
+    </password>
+    <password algorithm="salted-sha256">
+      <salt>792392890724232</salt>
+      <hash>7feaf12d5a9085d2b78e54639f93dfdd4e90c63518c676d55231ba1d777f58a0</hash>
+    </password>
+  </user>
+  <user name="Nadine" permission="none">
+    <password algorithm="digest">
+      <hash>68c67e351c6c48aeacc4381055284c7b</hash>
+    </password>
+    <password algorithm="salted-sha256">
+      <salt>792415540734044</salt>
+      <hash>722585b080167419b3fb0a50eab40f1d4931e43c323c3d9f9c274ea7099ac063</hash>
+    </password>
+  </user>
+</users>

@@ -10,9 +10,11 @@ source ${OPENSHIFT_REPO_DIR}/config
 
 # install basex if not installed or different version
 cd $OPENSHIFT_DATA_DIR
+MODE="RESTART"
 if [ -d "basex" ] && [ "`cat basex/VERSION`" == $BASEX_VERSION ]; then
-	echo "BaseX $BASEX_VERSION already installed"
-else
+    echo "BaseX $BASEX_VERSION already installed"
+else 
+    MODE="INSTALL"
 	echo "Installing BaseX ${BASEX_VERSION}"
 	if [ -d "basex" ]; then
 		rm -rf basex
@@ -31,11 +33,14 @@ fi
 echo "Overlaying app"
 cp -rv ${OPENSHIFT_REPO_DIR}basex/ ${OPENSHIFT_DATA_DIR}
 
+if [ "$MODE"  == "INSTALL" ]; then
+    echo "Copying users and data - INSTALL MODE"
+    cp -av ${OPENSHIFT_REPO_DIR}first-data/. ${OPENSHIFT_DATA_DIR}basex/data
+fi
 
 # run
 cd $OPENSHIFT_DATA_DIR
-nohup ${OPENSHIFT_DATA_DIR}/basex/bin/basexhttp -d \
+nohup ${OPENSHIFT_DATA_DIR}/basex/bin/basexhttp  \
                     -n ${OPENSHIFT_DIY_IP} -h ${OPENSHIFT_DIY_PORT} \
                     -p ${PORT_DATABASE} -s ${PORT_STOP} \
-                    -U ${BASEX_USER} -P ${BASEX_PASSWORD} \
                      &
