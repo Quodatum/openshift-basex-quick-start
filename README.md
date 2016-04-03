@@ -75,7 +75,8 @@ The sample users (case-sensitive) are:
 * Nadine (no privileges)
 
 The password for these users is the same as the user name.
-I have borrowed these names from Michael Sperberg-McQueen, who asked the all the right questions, 
+I have borrowed these names from Michael Sperberg-McQueen, who asked the all the right questions 
+on a earlier version, 
 “Running the BaseX XQuery engine in the OpenShift cloud platform ”http://cmsmcq.com/mib/?p=1395
 
 **Edit the users.xml file according to your own requirements before git push. Perhaps by copying `user`entries from a local BaseX installation.**
