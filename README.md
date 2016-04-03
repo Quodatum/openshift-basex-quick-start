@@ -74,7 +74,7 @@ The sample users (case-sensitive) are:
 * Ralph (read privileges)
 * Nadine (no privileges)
 
-The password are these is the same as the user name.
+The password for these users is the same as the user name.
 I have borrowed these names from Michael Sperberg-McQueen, who asked the all the right questions, 
 “Running the BaseX XQuery engine in the OpenShift cloud platform ”http://cmsmcq.com/mib/?p=1395
 
