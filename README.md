@@ -32,6 +32,12 @@ and pull locally
 
 	git pull -s recursive -X theirs upstream master
 
+Make your application changes
+
+    git add -A
+    git commit -m "My application"
+    git push origin master
+    
 finally, deploy to OpenShift
 
 	git push origin master
@@ -40,13 +46,14 @@ Now, the application is available at
 
 	http://$name-$namespace.rhcloud.com
 
-Make your application changes
+You can make your application updates and then
 
     git add -A
-    git commit -m "My bits"
+    git commit -m "my app updates"
     git push origin master
     	
 The hosted application will be stopped and restarted with the updates.
+Alternatively  you can use `scp` to directly update the contents of `${OPENSHIFT_DATA_DIR}/basex/`
 
 ## Configuration
 
