@@ -13,7 +13,7 @@ Built as a lightweight Java server, BaseX also supports XSLT, Webdav and RestXQ.
 Applications are pushed to Openshift using git. Openshift applications have a data area ${OPENSHIFT_DATA_DIR}
 that persists across restarts and git pushes. 
 This quick start works by manipulating the contents of that data area. 
-A BaseX installation is created or updated at ${OPENSHIFT_DATA_DIR}/basex by the Openshift start script.
+A BaseX installation is created or updated at `${OPENSHIFT_DATA_DIR}/basex/` by the Openshift start script.
  
 ## Installation
 
@@ -63,7 +63,7 @@ The default port settings are set `config`:
 
 ## Users and permissions
 
-Users and permissions are defined in the `users.xml` file (in `first-data`).
+Users and permissions are defined in the `users.xml` file in `first-data/`.
 The supplied `users.xml` contains the required "admin" user and some sample users. 
 The password for admin is set as "changeme". 
 The sample users (case-sensitive) are: 
@@ -84,18 +84,19 @@ No default user is set for REST and WebDAV (in `web.xml`) so authentication is r
 RESTXQ always uses the user "admin". 
 
 ## Initial data
-When the server is started if no `users.xml` file is found in ${OPENSHIFT_DATA_DIR}/basex/data/
-then contents of `first-data` are copied to the `basex/data` folder. This will normally happen only for 
+When the server is started if no `users.xml` file is found in `${OPENSHIFT_DATA_DIR}/basex/data/`
+then contents of `first-data` are copied to the `basex/data/` folder. This will normally happen only for 
 the first run.
 
-The `first-data` folder may be populated with sub-folders containing BaseX databases.  
+The `first-data/` folder may be populated with sub-folders containing BaseX databases.  
 Valid content for the `first-data` is anything that may be in the BaseX data folder. This includes
 database backups created from BaseX by the backup command. These may be restored via the dba application.
 
 ## Tips
-To force updates to users and databases delete the active ${OPENSHIFT_DATA_DIR}/basex/data/users.xml
+To force updates to users and databases delete the active `${OPENSHIFT_DATA_DIR}/basex/data/users.xml`
 
-To force the whole process to begin from the start without creating a new container delete ${OPENSHIFT_DATA_DIR}/basex
+To force the whole process to begin from the start without creating a new container delete
+ `${OPENSHIFT_DATA_DIR}/basex`
  
 ## Extras
 
