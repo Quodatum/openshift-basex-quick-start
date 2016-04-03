@@ -76,8 +76,8 @@ The sample users (case-sensitive) are:
 
 The password for these users is the same as the user name.
 I have borrowed these names from Michael Sperberg-McQueen, who asked the all the right questions 
-on a earlier version, 
-“Running the BaseX XQuery engine in the OpenShift cloud platform ”http://cmsmcq.com/mib/?p=1395
+in a review of an earlier version, 
+[Running the BaseX XQuery engine in the OpenShift cloud platform](http://cmsmcq.com/mib/?p=1395)
 
 **Edit the users.xml file according to your own requirements before git push. Perhaps by copying `user`entries from a local BaseX installation.**
 
@@ -99,6 +99,9 @@ To force updates to users and databases delete the active `${OPENSHIFT_DATA_DIR}
 To force the whole process to begin from the start without creating a new container delete
  `${OPENSHIFT_DATA_DIR}/basex`
  
+## Bugs
+Use https://github.com/Quodatum/openshift-basex-quick-start/issues
+
 ## Extras
 
 * To have graphviz available use  https://github.com/puzzle/openshift-graphviz-cartridge
