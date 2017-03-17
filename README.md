@@ -10,8 +10,7 @@ Built as a lightweight Java server, BaseX also supports XSLT, Webdav and RestXQ.
 [OpenShift](https://www.openshift.com/) is a cloud Platform-as-a-Service (PaaS) developed by Red Hat.
 
 ## Overview
-Applications are pushed to Openshift using git. Openshift applications have a data area ${OPENSHIFT_DATA_DIR}
-that persists across restarts and git pushes. 
+Applications are pushed to Openshift using Git. Openshift applications have a data area `${OPENSHIFT_DATA_DIR}` that persists across restarts and git pushes. 
 This quick start works by manipulating the contents of that data area. 
 A BaseX installation is created or updated at `${OPENSHIFT_DATA_DIR}/basex/` by the Openshift start script.
  
@@ -58,9 +57,9 @@ Alternatively  you can use `scp` to directly update the contents of `${OPENSHIFT
 ## Configuration
 
 * Configuration is set in the `config`. 
-The version of BaseX to install is also set here, currently 8.4.1 
+The version of BaseX to install is also set here, currently 8.6.2 
 * REST and Webdav and RESTXQ are activated (Edit `basex/webapp/WEB-INF/web.xml` to change this)
-* Saxon is installed to provide XSLT2. (Saxon-HE 9.7.0.1 from sourceforge.net/projects/saxon)
+* Saxon is installed to provide XSLT2. (Saxon-HE 9.7.0.15 from sourceforge.net/projects/saxon)
 * The FunctX library http://www.xqueryfunctions.com/ is installed to the BaseX repository
 * A test RESTXQ function is provided to overwrite the BaseX sample. (edit `basex/webapp/restxq.xqm`)   
 
@@ -101,10 +100,10 @@ Valid content for the `first-data` is anything that may be in the BaseX data fol
 database backups created from BaseX by the backup command. These may be restored via the dba application.
 
 ## Tips
-To force updates to users and databases delete the active `${OPENSHIFT_DATA_DIR}/basex/data/users.xml`
+To force updates to users and databases delete the active `${OPENSHIFT_DATA_DIR}/basex/data/users.xml` and restart.
 
 To force the whole process to begin from the start without creating a new container delete
- `${OPENSHIFT_DATA_DIR}/basex`
+ `${OPENSHIFT_DATA_DIR}/basex` and restart.
  
 ## Bugs
 Use https://github.com/Quodatum/openshift-basex-quick-start/issues
@@ -115,6 +114,7 @@ Use https://github.com/Quodatum/openshift-basex-quick-start/issues
 
 # Licence
 * This software is licenced under the Apache 2 licence
+* BaseX is licenced under the BSD license
 * Saxon-HE is licenced under Mozilla Public License version 2.0 http://www.saxonica.com/license/license.xml
 * FunctX is licenced under GNU-LGPL license http://www.functx.com/
 
